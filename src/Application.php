@@ -49,7 +49,7 @@ class Application extends BaseApplication
             $this->addPlugin(\DebugKit\Plugin::class);
         }
 
-        // Load more plugins here
+        $this->addPlugin('TwitterBootstrap');
     }
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bae3f640a631a993a49129d353eefbf9",
+    "content-hash": "375fec78c4874ae3560c1a7eb5433579",
     "packages": [
         {
             "name": "aura/intl",
@@ -51,6 +51,37 @@
                 "localization"
             ],
             "time": "2017-01-20T05:00:11+00:00"
+        },
+        {
+            "name": "cakephp-brasil/twitter-bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CakePHPBrasil/TwitterBootstrap.git",
+                "reference": "41ed062c98f4827cc9c86b8a58bf905dc302d93b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CakePHPBrasil/TwitterBootstrap/zipball/41ed062c98f4827cc9c86b8a58bf905dc302d93b",
+                "reference": "41ed062c98f4827cc9c86b8a58bf905dc302d93b",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/cakephp": "~3.0",
+                "php": ">=5.4.16"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "cakephp-plugin",
+            "autoload": {
+                "psr-4": {
+                    "TwitterBootstrap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "TwitterBootstrap plugin for CakePHP 3",
+            "time": "2017-03-18T22:15:22+00:00"
         },
         {
             "name": "cakephp/cakephp",
@@ -4322,6 +4353,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "cakephp-brasil/twitter-bootstrap": 20,
         "psy/psysh": 0
     },
     "prefer-stable": true,
