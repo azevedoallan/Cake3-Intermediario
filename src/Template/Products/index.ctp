@@ -6,14 +6,14 @@
             </div>
 
             <ul class="nav nav-pills nav-stacked">
-                <li><?= $this->Html->link(__('New {0}', ['Product']), ['action' => 'add']) ?></li>
+                <li><?= $this->Html->link(__('New {0}', [__('Product')]), ['action' => 'add']) ?></li>
             </ul>
         </div>
     </div>
     <div class="products col-md-10">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Products</h3>
+                <h3 class="box-title"><?php echo __('Products'); ?></h3>
             </div>
             <div class="box-body">
                 <table class="table table-striped table-hover">
