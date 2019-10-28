@@ -1,6 +1,6 @@
 <!-- To the right -->
 <div class="pull-right hidden-xs">
-  Anything you want
+  Sistema de estoque do curso
 </div>
 <!-- Default to the left -->
-<strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+<strong>Copyright &copy; <?php echo date('Y'); ?> <a href="https://www.schoolofnet.com.br">School of Net</a>.</strong> All rights reserved.

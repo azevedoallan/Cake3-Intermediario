@@ -294,3 +294,15 @@ msgstr "Produtos"
 msgid "Product"
 msgstr "Produto"
 
+msgid "Categories"
+msgstr "Categorias"
+
+msgid "Stock In"
+msgstr "Entrada de estoque"
+
+msgid "Stock Out"
+msgstr "Saida de estoque"
+
+msgid "Search..."
+msgstr "Buscar"
+

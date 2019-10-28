@@ -20,11 +20,11 @@
   </div>
 
   <!-- search form (Optional) -->
-  <form action="#" method="get" class="sidebar-form">
+  <form action="/products" method="get" class="sidebar-form">
     <div class="input-group">
-      <input type="text" name="q" class="form-control" placeholder="Search...">
+      <input type="text" name="q" class="form-control" placeholder=" <?php echo __('Search...'); ?>">
           <span class="input-group-btn">
-            <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+            <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
             </button>
           </span>
     </div>
@@ -33,18 +33,13 @@
 
   <!-- Sidebar Menu -->
   <ul class="sidebar-menu">
-    <li class="header">HEADER</li>
+      <li class="header">NAVEGAÇÃO</li>
     <!-- Optionally, you can add icons to the links -->
-    <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-    <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-    <li class="treeview">
-      <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-      <ul class="treeview-menu">
-        <li><a href="#">Link in level 2</a></li>
-        <li><a href="#">Link in level 2</a></li>
-      </ul>
-    </li>
+    <li><a href="/categories"><i class="fa fa-link"></i> <span> <?php echo __('Categories') ?></span></a></li>
+      <li><a href="/products"><i class="fa fa-link"></i> <span> <?php echo __('Products') ?></span></a></li>
+      <li><a href="/stock-in"><i class="fa fa-link"></i> <span> <?php echo __('Stock In') ?></span></a></li>
+      <li><a href="/stock-out"><i class="fa fa-link"></i> <span> <?php echo __('Stock Out') ?></span></a></li>
   </ul>
-  <!-- /.sidebar-menu -->
+    <!-- /.sidebar-menu -->
 </section>
 <!-- /.sidebar -->
