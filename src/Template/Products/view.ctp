@@ -68,7 +68,6 @@
                                 <th>Unit Cost</th>
                                 <th>Created</th>
                                 <th>Modified</th>
-                                <th class="actions"><?= __('Actions') ?></th>
                             </tr>
                             <?php foreach ($product->stock as $stock): ?>
                                 <tr>
@@ -79,11 +78,6 @@
                                     <td><?= h($stock->unit_cost) ?></td>
                                     <td><?= h($stock->created) ?></td>
                                     <td><?= h($stock->modified) ?></td>
-                                    <td class="actions">
-                                        <?= $this->Html->link(__('View'), ['controller' => 'Stock', 'action' => 'view', $stock->id]) ?>
-                                        <?= $this->Html->link(__('Edit'), ['controller' => 'Stock', 'action' => 'edit', $stock->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'Stock', 'action' => 'delete', $stock->id], ['confirm' => __('Are you sure you want to delete # {0}?', $stock->id)]) ?>
-                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
@@ -108,8 +102,6 @@
                                     <td><?= h($stockIn->created) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['controller' => 'StockIn', 'action' => 'view', $stockIn->id]) ?>
-                                        <?= $this->Html->link(__('Edit'), ['controller' => 'StockIn', 'action' => 'edit', $stockIn->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'StockIn', 'action' => 'delete', $stockIn->id], ['confirm' => __('Are you sure you want to delete # {0}?', $stockIn->id)]) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -135,8 +127,6 @@
                                     <td><?= h($stockOut->created) ?></td>
                                     <td class="actions">
                                         <?= $this->Html->link(__('View'), ['controller' => 'StockOut', 'action' => 'view', $stockOut->id]) ?>
-                                        <?= $this->Html->link(__('Edit'), ['controller' => 'StockOut', 'action' => 'edit', $stockOut->id]) ?>
-                                        <?= $this->Form->postLink(__('Delete'), ['controller' => 'StockOut', 'action' => 'delete', $stockOut->id], ['confirm' => __('Are you sure you want to delete # {0}?', $stockOut->id)]) ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

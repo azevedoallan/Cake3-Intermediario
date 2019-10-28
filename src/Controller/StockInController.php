@@ -63,49 +63,4 @@ class StockInController extends AppController
         $products = $this->StockIn->Products->find('list', ['limit' => 200]);
         $this->set(compact('stockIn', 'products'));
     }
-
-    /**
-     * Edit method
-     *
-     * @param string|null $id Stock In id.
-     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function edit($id = null)
-    {
-        $stockIn = $this->StockIn->get($id, [
-            'contain' => []
-        ]);
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $stockIn = $this->StockIn->patchEntity($stockIn, $this->request->getData());
-            if ($this->StockIn->save($stockIn)) {
-                $this->Flash->success(__('The stock in has been saved.'));
-
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The stock in could not be saved. Please, try again.'));
-        }
-        $products = $this->StockIn->Products->find('list', ['limit' => 200]);
-        $this->set(compact('stockIn', 'products'));
-    }
-
-    /**
-     * Delete method
-     *
-     * @param string|null $id Stock In id.
-     * @return \Cake\Http\Response|null Redirects to index.
-     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
-     */
-    public function delete($id = null)
-    {
-        $this->request->allowMethod(['post', 'delete']);
-        $stockIn = $this->StockIn->get($id);
-        if ($this->StockIn->delete($stockIn)) {
-            $this->Flash->success(__('The stock in has been deleted.'));
-        } else {
-            $this->Flash->error(__('The stock in could not be deleted. Please, try again.'));
-        }
-
-        return $this->redirect(['action' => 'index']);
-    }
 }
