@@ -39,6 +39,7 @@ class StockInTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('StockManager');
 
         $this->belongsTo('Products', [
             'foreignKey' => 'product_id',
@@ -79,4 +80,5 @@ class StockInTable extends Table
 
         return $rules;
     }
+
 }

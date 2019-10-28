@@ -52,6 +52,7 @@ class StockInController extends AppController
     {
         $stockIn = $this->StockIn->newEntity();
         if ($this->request->is('post')) {
+            $this->StockIn->stockIn();
             $stockIn = $this->StockIn->patchEntity($stockIn, $this->request->getData());
             if ($this->StockIn->save($stockIn)) {
                 $this->Flash->success(__('The stock in has been saved.'));
