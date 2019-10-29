@@ -1,7 +1,9 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Model\Entity\Product;
 
 /**
  * StockIn Controller
@@ -52,9 +54,11 @@ class StockInController extends AppController
     {
         $stockIn = $this->StockIn->newEntity();
         if ($this->request->is('post')) {
-            $this->StockIn->stockIn();
             $stockIn = $this->StockIn->patchEntity($stockIn, $this->request->getData());
             if ($this->StockIn->save($stockIn)) {
+                $product_id = $this->request->data(['product_id']);
+                $product = $this->StockIn->Products->get($product_id);
+                $this->StockIn->stockIn($product, $this->request->data(['quantity']));
                 $this->Flash->success(__('The stock in has been saved.'));
 
                 return $this->redirect(['action' => 'index']);

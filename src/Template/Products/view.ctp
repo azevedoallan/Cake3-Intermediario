@@ -63,7 +63,7 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Product Id</th>
-                                <th>Decimal</th>
+                                <th>Quantity</th>
                                 <th>Unit Price</th>
                                 <th>Unit Cost</th>
                                 <th>Created</th>
@@ -73,7 +73,7 @@
                                 <tr>
                                     <td><?= h($stock->id) ?></td>
                                     <td><?= h($stock->product_id) ?></td>
-                                    <td><?= h($stock->decimal) ?></td>
+                                    <td><?= h($stock->quantity) ?></td>
                                     <td><?= h($stock->unit_price) ?></td>
                                     <td><?= h($stock->unit_cost) ?></td>
                                     <td><?= h($stock->created) ?></td>

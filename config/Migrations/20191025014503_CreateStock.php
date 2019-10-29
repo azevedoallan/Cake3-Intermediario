@@ -14,7 +14,7 @@ class CreateStock extends AbstractMigration
     {
         $table = $this->table('stock');
         $table->addColumn('product_id', 'integer');
-        $table->addColumn('decimal', 'integer');
+        $table->addColumn('quantity', 'integer');
         $table->addColumn('unit_price', 'decimal', [
             'precision' => 11,
             'scale' => 2

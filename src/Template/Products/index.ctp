@@ -22,8 +22,7 @@
                                         <th><?= $this->Paginator->sort('id') ?></th>
                                         <th><?= $this->Paginator->sort('title') ?></th>
                                         <th><?= $this->Paginator->sort('price') ?></th>
-                                        <th><?= $this->Paginator->sort('cost') ?></th>
-                                        <th><?= $this->Paginator->sort('status') ?></th>
+                                        <th><?= $this->Paginator->sort('quantity') ?></th>
                                         <th><?= $this->Paginator->sort('alert_quantity') ?></th>
                                         <th><?= $this->Paginator->sort('created') ?></th>
                                         <th class="actions"><?= __('Actions') ?></th>
@@ -31,12 +30,11 @@
                     </thead>
                     <tbody>
                         <?php foreach ($products as $product): ?>
-                        <tr>
+                        <tr <?php echo  ($product->stock->quantity < $product->stock->alert_quantity) ? 'class="danger"' : '';?>>
                                         <td><?= $this->Number->format($product->id) ?></td>
                                         <td><?= h($product->title) ?></td>
                                         <td><?= $this->Number->format($product->price) ?></td>
-                                        <td><?= $this->Number->format($product->cost) ?></td>
-                                        <td><?= $this->Number->format($product->status) ?></td>
+                                        <td><?= $this->Number->format($product->stock->quantity) ?></td>
                                         <td><?= $this->Number->format($product->alert_quantity) ?></td>
                                         <td><?= h($product->created) ?></td>
                                         <td class="actions" style="white-space:nowrap">

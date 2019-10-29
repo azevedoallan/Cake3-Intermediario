@@ -55,6 +55,9 @@ class StockOutController extends AppController
         if ($this->request->is('post')) {
             $stockOut = $this->StockOut->patchEntity($stockOut, $this->request->getData());
             if ($this->StockOut->save($stockOut)) {
+                $product_id = $this->request->data(['product_id']);
+                $product = $this->StockOut->Products->get($product_id);
+                $this->StockOut->stockOut($product, $this->request->data(['quantity']));
                 $this->Flash->success(__('The stock out has been saved.'));
 
                 return $this->redirect(['action' => 'index']);

@@ -43,7 +43,7 @@ class ProductsTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('Stock', [
+        $this->hasOne('Stock', [
             'foreignKey' => 'product_id'
         ]);
         $this->hasMany('StockIn', [

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Controller\AppController;
@@ -19,6 +20,11 @@ class ProductsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => [
+                'Stock'
+            ]
+        ];
         $products = $this->paginate($this->Products);
 
         $this->set(compact('products'));
