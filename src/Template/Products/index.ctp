@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         <?php foreach ($products as $product): ?>
-                        <tr <?php echo  ($product->stock->quantity < $product->stock->alert_quantity) ? 'class="danger"' : '';?>>
+                        <tr class="<?php echo $this->StockStatus->status($product->stock->quantity, $product->alert_quantity); ?>">
                                         <td><?= $this->Number->format($product->id) ?></td>
                                         <td><?= h($product->title) ?></td>
                                         <td><?= $this->Number->format($product->price) ?></td>
