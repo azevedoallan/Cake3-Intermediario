@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Controller;
+namespace Stock\Controller;
 
-use App\Controller\AppController;
+use Stock\Controller\AppController;
 use App\Model\Entity\Product;
 
 /**
  * StockIn Controller
  *
- * @property \App\Model\Table\StockInTable $StockIn
+ * @property \Stock\Model\Table\StockInTable $StockIn
  *
- * @method \App\Model\Entity\StockIn[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \Stock\Model\Entity\StockIn[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class StockInController extends AppController
 {

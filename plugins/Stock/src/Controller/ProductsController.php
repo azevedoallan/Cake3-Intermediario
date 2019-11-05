@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Controller;
+namespace Stock\Controller;
 
-use App\Controller\AppController;
+use Stock\Controller\AppController;
 
 /**
  * Products Controller
  *
- * @property \App\Model\Table\ProductsTable $Products
+ * @property \Stock\Model\Table\ProductsTable $Products
  *
- * @method \App\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \Stock\Model\Entity\Product[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class ProductsController extends AppController
 {

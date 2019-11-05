@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Controller;
+namespace Stock\Controller;
 
-use App\Controller\AppController;
+use Stock\Controller\AppController;
 
 /**
  * StockOut Controller
  *
- * @property \App\Model\Table\StockOutTable $StockOut
+ * @property \Stock\Model\Table\StockOutTable $StockOut
  *
- * @method \App\Model\Entity\StockOut[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \Stock\Model\Entity\StockOut[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class StockOutController extends AppController
 {

@@ -1,14 +1,14 @@
 <?php
-namespace App\Controller;
+namespace Stock\Controller;
 
-use App\Controller\AppController;
+use Stock\Controller\AppController;
 
 /**
  * Categories Controller
  *
- * @property \App\Model\Table\CategoriesTable $Categories
+ * @property \Stock\Model\Table\CategoriesTable $Categories
  *
- * @method \App\Model\Entity\Category[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @method \Stock\Model\Entity\Category[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class CategoriesController extends AppController
 {
