@@ -1,18 +1,19 @@
 <?php
-namespace App\Model\Entity;
+namespace Stock\Model\Entity;
 
 use Cake\ORM\Entity;
 
 /**
- * Category Entity
+ * StockIn Entity
  *
  * @property int $id
- * @property string $title
- * @property string $url
+ * @property int $product_id
+ * @property int $quantity
+ * @property \Cake\I18n\FrozenTime $created
  *
- * @property \App\Model\Entity\Product[] $products
+ * @property \Stock\Model\Entity\Product $product
  */
-class Category extends Entity
+class StockIn extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -24,8 +25,9 @@ class Category extends Entity
      * @var array
      */
     protected $_accessible = [
-        'title' => true,
-        'url' => true,
-        'products' => true
+        'product_id' => true,
+        'quantity' => true,
+        'created' => true,
+        'product' => true
     ];
 }

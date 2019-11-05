@@ -1,22 +1,19 @@
 <?php
-namespace App\Model\Entity;
+namespace Stock\Model\Entity;
 
 use Cake\ORM\Entity;
 
 /**
- * Stock Entity
+ * StockOut Entity
  *
  * @property int $id
  * @property int $product_id
  * @property int $quantity
- * @property float $unit_price
- * @property float $unit_cost
  * @property \Cake\I18n\FrozenTime $created
- * @property \Cake\I18n\FrozenTime $modified
  *
- * @property \App\Model\Entity\Product $product
+ * @property \Stock\Model\Entity\Product $product
  */
-class Stock extends Entity
+class StockOut extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -30,10 +27,7 @@ class Stock extends Entity
     protected $_accessible = [
         'product_id' => true,
         'quantity' => true,
-        'unit_price' => true,
-        'unit_cost' => true,
         'created' => true,
-        'modified' => true,
         'product' => true
     ];
 }

@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Table;
+namespace Stock\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
@@ -7,22 +7,22 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * StockOut Model
+ * StockIn Model
  *
- * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
+ * @property \Stock\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
  *
- * @method \App\Model\Entity\StockOut get($primaryKey, $options = [])
- * @method \App\Model\Entity\StockOut newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\StockOut[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\StockOut|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StockOut saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\StockOut patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\StockOut[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\StockOut findOrCreate($search, callable $callback = null, $options = [])
+ * @method \Stock\Model\Entity\StockIn get($primaryKey, $options = [])
+ * @method \Stock\Model\Entity\StockIn newEntity($data = null, array $options = [])
+ * @method \Stock\Model\Entity\StockIn[] newEntities(array $data, array $options = [])
+ * @method \Stock\Model\Entity\StockIn|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\StockIn saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\StockIn patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \Stock\Model\Entity\StockIn[] patchEntities($entities, array $data, array $options = [])
+ * @method \Stock\Model\Entity\StockIn findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class StockOutTable extends Table
+class StockInTable extends Table
 {
     /**
      * Initialize method
@@ -34,14 +34,14 @@ class StockOutTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('stock_out');
+        $this->setTable('stock_in');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
-        $this->addBehavior('StockManager');
+        $this->addBehavior('Stock.StockManager');
 
-        $this->belongsTo('Products', [
+        $this->belongsTo('Stock.Products', [
             'foreignKey' => 'product_id',
             'joinType' => 'INNER'
         ]);
@@ -80,4 +80,5 @@ class StockOutTable extends Table
 
         return $rules;
     }
+
 }

@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Table;
+namespace Stock\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
@@ -11,14 +11,14 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsToMany $Products
  *
- * @method \App\Model\Entity\Category get($primaryKey, $options = [])
- * @method \App\Model\Entity\Category newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Category[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Category|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Category saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Category patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Category[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Category findOrCreate($search, callable $callback = null, $options = [])
+ * @method \Stock\Model\Entity\Category get($primaryKey, $options = [])
+ * @method \Stock\Model\Entity\Category newEntity($data = null, array $options = [])
+ * @method \Stock\Model\Entity\Category[] newEntities(array $data, array $options = [])
+ * @method \Stock\Model\Entity\Category|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\Category saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\Category patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \Stock\Model\Entity\Category[] patchEntities($entities, array $data, array $options = [])
+ * @method \Stock\Model\Entity\Category findOrCreate($search, callable $callback = null, $options = [])
  */
 class CategoriesTable extends Table
 {
@@ -36,7 +36,7 @@ class CategoriesTable extends Table
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
 
-        $this->belongsToMany('Products', [
+        $this->belongsToMany('Stock.Products', [
             'foreignKey' => 'category_id',
             'targetForeignKey' => 'product_id',
             'joinTable' => 'categories_products'

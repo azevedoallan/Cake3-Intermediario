@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Table;
+namespace Stock\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
@@ -9,19 +9,19 @@ use Cake\Validation\Validator;
 /**
  * Products Model
  *
- * @property \App\Model\Table\StockTable&\Cake\ORM\Association\HasMany $Stock
- * @property \App\Model\Table\StockInTable&\Cake\ORM\Association\HasMany $StockIn
- * @property \App\Model\Table\StockOutTable&\Cake\ORM\Association\HasMany $StockOut
- * @property \App\Model\Table\CategoriesTable&\Cake\ORM\Association\BelongsToMany $Categories
+ * @property \Stock\Model\Table\StockTable&\Cake\ORM\Association\HasMany $Stock
+ * @property \Stock\Model\Table\StockInTable&\Cake\ORM\Association\HasMany $StockIn
+ * @property \Stock\Model\Table\StockOutTable&\Cake\ORM\Association\HasMany $StockOut
+ * @property \Stock\Model\Table\CategoriesTable&\Cake\ORM\Association\BelongsToMany $Categories
  *
- * @method \App\Model\Entity\Product get($primaryKey, $options = [])
- * @method \App\Model\Entity\Product newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Product[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Product|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Product saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Product patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Product[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Product findOrCreate($search, callable $callback = null, $options = [])
+ * @method \Stock\Model\Entity\Product get($primaryKey, $options = [])
+ * @method \Stock\Model\Entity\Product newEntity($data = null, array $options = [])
+ * @method \Stock\Model\Entity\Product[] newEntities(array $data, array $options = [])
+ * @method \Stock\Model\Entity\Product|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\Product saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\Product patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \Stock\Model\Entity\Product[] patchEntities($entities, array $data, array $options = [])
+ * @method \Stock\Model\Entity\Product findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
@@ -43,16 +43,19 @@ class ProductsTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->hasOne('Stock', [
-            'foreignKey' => 'product_id'
+        $this->hasOne('Stock.Stock', [
+            'foreignKey' => 'product_id',
+            'dependent' => true
         ]);
-        $this->hasMany('StockIn', [
-            'foreignKey' => 'product_id'
+        $this->hasMany('Stock.StockIn', [
+            'foreignKey' => 'product_id',
+            'dependent' => true
         ]);
-        $this->hasMany('StockOut', [
-            'foreignKey' => 'product_id'
+        $this->hasMany('Stock.StockOut', [
+            'foreignKey' => 'product_id',
+            'dependent' => true
         ]);
-        $this->belongsToMany('Categories', [
+        $this->belongsToMany('Stock.Categories', [
             'foreignKey' => 'product_id',
             'targetForeignKey' => 'category_id',
             'joinTable' => 'categories_products'

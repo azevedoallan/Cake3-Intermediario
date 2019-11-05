@@ -35,10 +35,10 @@
   <ul class="sidebar-menu">
       <li class="header">NAVEGAÇÃO</li>
     <!-- Optionally, you can add icons to the links -->
-    <li><a href="/categories"><i class="fa fa-link"></i> <span> <?php echo __('Categories') ?></span></a></li>
-      <li><a href="/products"><i class="fa fa-link"></i> <span> <?php echo __('Products') ?></span></a></li>
-      <li><a href="/stock-in"><i class="fa fa-link"></i> <span> <?php echo __('Stock In') ?></span></a></li>
-      <li><a href="/stock-out"><i class="fa fa-link"></i> <span> <?php echo __('Stock Out') ?></span></a></li>
+    <li><a href="/stock/categories"><i class="fa fa-link"></i> <span> <?php echo __('Categories') ?></span></a></li>
+      <li><a href="/stock/products"><i class="fa fa-link"></i> <span> <?php echo __('Products') ?></span></a></li>
+      <li><a href="/stock/stock-in"><i class="fa fa-link"></i> <span> <?php echo __('Stock In') ?></span></a></li>
+      <li><a href="/stock/stock-out"><i class="fa fa-link"></i> <span> <?php echo __('Stock Out') ?></span></a></li>
   </ul>
     <!-- /.sidebar-menu -->
 </section>

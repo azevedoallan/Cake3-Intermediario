@@ -1,5 +1,5 @@
 <?php
-namespace App\Model\Table;
+namespace Stock\Model\Table;
 
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
@@ -9,16 +9,16 @@ use Cake\Validation\Validator;
 /**
  * Stock Model
  *
- * @property \App\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
+ * @property \Stock\Model\Table\ProductsTable&\Cake\ORM\Association\BelongsTo $Products
  *
- * @method \App\Model\Entity\Stock get($primaryKey, $options = [])
- * @method \App\Model\Entity\Stock newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Stock[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Stock|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Stock saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Stock patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Stock[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Stock findOrCreate($search, callable $callback = null, $options = [])
+ * @method \Stock\Model\Entity\Stock get($primaryKey, $options = [])
+ * @method \Stock\Model\Entity\Stock newEntity($data = null, array $options = [])
+ * @method \Stock\Model\Entity\Stock[] newEntities(array $data, array $options = [])
+ * @method \Stock\Model\Entity\Stock|false save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\Stock saveOrFail(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \Stock\Model\Entity\Stock patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \Stock\Model\Entity\Stock[] patchEntities($entities, array $data, array $options = [])
+ * @method \Stock\Model\Entity\Stock findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
@@ -40,7 +40,7 @@ class StockTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Products', [
+        $this->belongsTo('Stock.Products', [
             'foreignKey' => 'product_id',
             'joinType' => 'INNER'
         ]);

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Model\Behavior;
+namespace Stock\Model\Behavior;
 
-use App\Model\Entity\Product;
+use Stock\Model\Entity\Product;
 use Cake\ORM\Behavior;
 use Cake\ORM\Table;
 use Cake\ORM\TableRegistry;
@@ -32,7 +32,7 @@ class StockManagerBehavior extends Behavior
 
     private function createOrUpdateStock(Product $product, $qtd, $in)
     {
-        $stockTable = TableRegistry::get('Stock');
+        $stockTable = TableRegistry::get('Stock.Stock');
         $stock = $stockTable->find()
             ->where(['product_id' => $product->id])
             ->first();
