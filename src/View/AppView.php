@@ -37,5 +37,6 @@ class AppView extends View
     public function initialize()
     {
         $this->loadHelper('Form', ['className' => 'TwitterBootstrap.Form']);
+        $this->loadHelper('Stock.StockStatus');
     }
 }
