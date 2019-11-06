@@ -46,7 +46,25 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
-        $this->loadComponent('locale');
+        $this->loadComponent('Auth', [
+            'loginAction' => [
+                'plugin' => 'Auth',
+                'controller' => 'users',
+                'action' => 'login'
+            ],
+            'authenticate' => [
+                'Form' => [
+                    'UserModel' => 'Auth.User',
+                    'fields' => ['username' => 'email']
+                ]
+            ]
+        ]);
+
+        $locale = $this->Auth->user('locale');
+
+        $this->loadComponent('locale', [
+            'user_preference' => $locale
+        ]);
 
         $this->loadComponent('Cookie');
 

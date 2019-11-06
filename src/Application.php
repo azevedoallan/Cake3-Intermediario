@@ -34,6 +34,8 @@ class Application extends BaseApplication
      */
     public function bootstrap()
     {
+        $this->addPlugin('Auth');
+
         $this->addPlugin('Stock');
 
         // Call parent to load bootstrap from files.
